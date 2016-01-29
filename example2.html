@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="thai">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Code Book</title>
+
+	<!-- Bootstrap CSS -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+	<link rel="stylesheet" href="https://github.com/isagalaev/highlight.js/blob/master/src/styles/hybrid.css">
+    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="comment.css">
+    <style>
+      #panel1{
+         margin: 3%;
+         margin-top: 3%;
+         padding: 1%;
+     }
+     #p{
+         font-size: 1em;
+     }
+     .animated {
+        -webkit-transition: height 0.2s;
+        -moz-transition: height 0.2s;
+        transition: height 0.2s;
+    }
+
+    .stars
+    {
+        margin: 20px 0;
+        font-size: 24px;
+        color: #d17581;
+    }
+    </style>
+    
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+ <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+			<![endif]-->
+		</head>
+		<body>
+			
+			<nav class="navbar navbar-default" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index2.html">The Code Book</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="java.html">Java</a></li>
+						<li><a href="c-sharp.html">C#</a></li>
+						<li><a href="python.html">Python</a></li>
+						<li><a href="vb.html">VB</a></li>
+						<li><a href="shared-code.html">Shared Code</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="add-code.html">Post Code</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi,Eiji<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">My post</a></li>
+								<li><a href="index.html">Sign out</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+			<div class="row" style="margin-left:3%">
+				<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+					<img src="icon.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="panel panel-default" id="panel1">
+				<div class="panel-heading">
+                    <h3 class="panel-title">Connect Database</h3>
+                    <span class="badge">Java</span>
+                </div>
+                <div class="panel-body">
+                   <pre><code class="java Hljs">package com.java.myapp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class MyClass {
+
+    public static void main(String[] args) {
+        
+        Connection connect = null;
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connect =  DriverManager.getConnection("jdbc:mysql://localhost/mydatabase" +
+                    "?user=root&password=root");
+
+            if(connect != null){
+                System.out.println("Database Connected.");
+            } else {
+                System.out.println("Database Connect Failed.");
+            }
+            
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        // Close
+        try {
+            if(connect != null){
+                connect.close();
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+    }</code></pre>
+</div>
+</div>
+
+<div class="container">
+                
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="rating-block">
+                    <h4>Average user rating</h4>
+                    <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            
+        
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="review-block">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="review-block-name"><a href="#">Eiji Daiw</a></div>
+                            <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="review-block-rate">
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="review-block-name"><a href="#">Pop</a></div>
+                            <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="review-block-rate">
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="review-block-name"><a href="#">Kwang kuku</a></div>
+                            <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="review-block-rate">
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-3">
+                    <form accept-charset="UTF-8" action="" method="post">
+                        <input id="ratings-hidden" name="rating" type="hidden"> 
+                        <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your comment here..." rows="5"></textarea>
+        
+                        <div class="text-right">
+                            <fieldset class="rating">
+                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                            </fieldset>
+                            <br>
+                            <button class="btn btn-success btn-lg" type="submit">Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+<script src="m.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+</body>
+</html>
