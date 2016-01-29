@@ -14,9 +14,10 @@
 function myFunction() {
     alert("Finish");
 }
+		
 </script>
 	<style>
-		#panel1{
+	#panel1{
 			margin: 3%;
 			margin-top: 3%;
 			padding: 1%;
@@ -100,26 +101,54 @@ function myFunction() {
 		  </div>
 		  <div class="panel-body">
 				<form role="form">
-					<div class="form-group col-md-8">
-						<label for="email">Title:</label>
-						<input type="text" class="form-control" text="Connect database" placeholder="Enter title">
-					</div>
-					<div class="form-group col-md-4" id="list">
-						<label for="sel1">language</label>
-						<select class="form-control" id="sel1">
-							<option>Java</option>
-							<option>C#</option>
-							<option>Python</option>
-							<option>Virtual Basic</option>
-						</select>
-					</div>
+					<h2>Connect database</h2>
 					<div class="form-group col-md-12">
 						<label for="pwd">Content:</label>
-						<textarea class="form-control" rows="5" id="comment"></textarea>
+						<textarea class="form-control" rows="43" id="comment">package com.java.myapp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class MyClass {
+
+	public static void main(String[] args) {
+		
+		Connection connect = null;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connect =  DriverManager.getConnection("jdbc:mysql://localhost/mydatabase" +
+					"?user=root&password=root");
+
+			if(connect != null){
+				System.out.println("Database Connected.");
+			} else {
+				System.out.println("Database Connect Failed.");
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// Close
+		try {
+			if(connect != null){
+				connect.close();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+}</textarea>
 					</div>
 					<div align="right" class="col-md-12">
-						<a href="index3.html">
-							<button type="button" class="btn btn-primary" onclick="myFunction()">Add</button>
+						<a href="java2.html">
+							<button type="button" class="btn btn-primary" onclick="myFunction()">Edit</button>
 						</a>
 					</div>
 				</form>
